@@ -1,0 +1,11 @@
+# Config
+config.json
+
+# Data
+split_data.json
+
+# Python
+__pycache__/
+
+# Pyrefly
+pyrefly.toml
