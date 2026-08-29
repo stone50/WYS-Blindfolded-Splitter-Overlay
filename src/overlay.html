@@ -171,6 +171,10 @@
         let currentSplitUpdatedAt = 0;
 
         function updateCurrentSplitDisplay() {
+            if (currentSplitPaused) {
+                return;
+            }
+
             if (currentSplit < 0 || currentSplit >= splits.length) {
                 return;
             }
@@ -184,10 +188,8 @@
 
             let displayTime = currentSplitBaseTime;
 
-            if (!currentSplitPaused) {
-                const elapsedSeconds = (Date.now() - currentSplitUpdatedAt) / 1000;
-                displayTime += elapsedSeconds;
-            }
+            const elapsedSeconds = (Date.now() - currentSplitUpdatedAt) / 1000;
+            displayTime += elapsedSeconds;
 
             timeElement.textContent = formatTime(displayTime);
             cell.classList.add('has-time');
@@ -214,8 +216,6 @@
                     cell.classList.remove('has-time');
                 }
             });
-
-            updateCurrentSplitDisplay();
         }
 
         function updateActiveCell() {
