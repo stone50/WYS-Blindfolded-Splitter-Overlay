@@ -7,7 +7,7 @@
     <style>
         html,
         body {
-            width: 2400px;
+            width: 2520px;
             height: 425px;
             margin: 0;
             padding: 0;
@@ -21,9 +21,9 @@
 
         .splitter {
             display: grid;
-            grid-template-columns: repeat(20, 120px);
+            grid-template-columns: repeat(21, 120px);
             grid-template-rows: repeat(5, 85px);
-            width: 2400px;
+            width: 2520px;
             height: 425px;
             margin: 0;
             padding: 0;
@@ -60,8 +60,10 @@
             font-weight: 900;
         }
 
-        .name.rng-dependent {
+        .cell.rng-dependent .name {
             color: blue;
+            text-decoration: underline;
+            text-decoration-thickness: 4px;
         }
 
         .time {
@@ -80,6 +82,51 @@
         }
 
         .cell.has-time .time {
+            display: flex;
+        }
+
+        .chapter-cell {
+            grid-template-rows: 1fr;
+            background-color: #e6e6e6;
+            border-radius: 0;
+        }
+
+        .chapter-cell.has-time {
+            grid-template-rows: 1fr 1fr;
+        }
+
+        .chapter-cell .chapter-name {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 0;
+            min-height: 0;
+            overflow: hidden;
+            white-space: nowrap;
+            line-height: 1;
+            font-size: 42px;
+            font-weight: 900;
+        }
+
+        .chapter-cell .chapter-time {
+            display: none;
+            align-items: center;
+            justify-content: center;
+            min-width: 0;
+            min-height: 0;
+            overflow: hidden;
+            white-space: nowrap;
+            line-height: 1;
+            font-family: Consolas, 'Courier New', monospace;
+            font-size: 28px;
+            font-weight: 900;
+        }
+
+        .chapter-cell.has-time .chapter-name {
+            font-size: 30px;
+        }
+
+        .chapter-cell.has-time .chapter-time {
             display: flex;
         }
 
@@ -102,7 +149,7 @@
             { name: 'A01', difficulty: 1, rng_dependent: false }, { name: 'A01.1', difficulty: 1, rng_dependent: false }, { name: 'A05', difficulty: 1, rng_dependent: false }, { name: 'A06', difficulty: 0, rng_dependent: false }, { name: 'A07', difficulty: 0, rng_dependent: false }, { name: 'A08', difficulty: 1, rng_dependent: false }, { name: 'A09', difficulty: 1, rng_dependent: false }, { name: 'A10', difficulty: 1, rng_dependent: false }, { name: 'A11', difficulty: 0, rng_dependent: false }, { name: 'A12', difficulty: 0, rng_dependent: false }, { name: 'A13', difficulty: 1, rng_dependent: false }, { name: 'A14', difficulty: 2, rng_dependent: false }, { name: 'A15', difficulty: 2, rng_dependent: false }, { name: 'A16', difficulty: 2, rng_dependent: false }, { name: 'A17', difficulty: 3, rng_dependent: false }, { name: 'A18', difficulty: 2, rng_dependent: false }, { name: 'A19', difficulty: 3, rng_dependent: false }, { name: 'A20', difficulty: 3, rng_dependent: false }, { name: 'A21', difficulty: 0, rng_dependent: false },
             { name: 'B01', difficulty: 0, rng_dependent: false }, { name: 'B02', difficulty: 0, rng_dependent: false }, { name: 'B04', difficulty: 0, rng_dependent: false }, { name: 'B05', difficulty: 1, rng_dependent: false }, { name: 'B06', difficulty: 2, rng_dependent: false }, { name: 'B07', difficulty: 1, rng_dependent: false }, { name: 'B08', difficulty: 3, rng_dependent: false }, { name: 'B09', difficulty: 3, rng_dependent: false }, { name: 'B10', difficulty: 1, rng_dependent: false }, { name: 'B11', difficulty: 4, rng_dependent: false }, { name: 'B12', difficulty: 1, rng_dependent: false }, { name: 'B13', difficulty: 4, rng_dependent: false }, { name: 'B14', difficulty: 1, rng_dependent: false }, { name: 'B15', difficulty: 4, rng_dependent: false }, { name: 'B16', difficulty: 2, rng_dependent: false }, { name: 'B17', difficulty: 1, rng_dependent: false }, { name: 'B18', difficulty: 2, rng_dependent: false }, { name: 'B19', difficulty: 0, rng_dependent: false },
             { name: 'C01', difficulty: 0, rng_dependent: false }, { name: 'C04', difficulty: 1, rng_dependent: false }, { name: 'C05', difficulty: 0, rng_dependent: false }, { name: 'C06', difficulty: 0, rng_dependent: false }, { name: 'C07', difficulty: 0, rng_dependent: false }, { name: 'C08', difficulty: 0, rng_dependent: false }, { name: 'C09', difficulty: 2, rng_dependent: false }, { name: 'C10', difficulty: 2, rng_dependent: true }, { name: 'C11', difficulty: 2, rng_dependent: false }, { name: 'C12', difficulty: 1, rng_dependent: false }, { name: 'C13', difficulty: 2, rng_dependent: false }, { name: 'C14', difficulty: 4, rng_dependent: false }, { name: 'C15', difficulty: 2, rng_dependent: true }, { name: 'C16', difficulty: 4, rng_dependent: false }, { name: 'C17', difficulty: 1, rng_dependent: false }, { name: 'C18', difficulty: 3, rng_dependent: false }, { name: 'C19', difficulty: 2, rng_dependent: false }, { name: 'C20', difficulty: 0, rng_dependent: false }, { name: 'C21', difficulty: 2, rng_dependent: false }, { name: 'C22', difficulty: 0, rng_dependent: false },
-            { name: 'D01', difficulty: 0, rng_dependent: false }, { name: 'D05', difficulty: 1, rng_dependent: false }, { name: 'D06', difficulty: 0, rng_dependent: false }, { name: 'D07', difficulty: 1, rng_dependent: false }, { name: 'D08', difficulty: 1, rng_dependent: false }, { name: 'D09', difficulty: 3, rng_dependent: false }, { name: 'D10', difficulty: 1, rng_dependent: false }, { name: 'D11', difficulty: 1, rng_dependent: false }, { name: 'D12', difficulty: 1, rng_dependent: false }, { name: 'D13', difficulty: 1, rng_dependent: false }, { name: 'D14', difficulty: 3, rng_dependent: false }, { name: 'D15', difficulty: 1, rng_dependent: false }, { name: 'D16', difficulty: 1, rng_dependent: false }, { name: 'D17', difficulty: 1, rng_dependent: false }, { name: 'D18', difficulty: 1, rng_dependent: false }, { name: 'D19', difficulty: 3, rng_dependent: false }, { name: 'D20', difficulty: 0, rng_dependent: false },
+            { name: 'D01', difficulty: 0, rng_dependent: false }, { name: 'D05', difficulty: 1, rng_dependent: false }, { name: 'D06', difficulty: 0, rng_dependent: false }, { name: 'D07', difficulty: 2, rng_dependent: false }, { name: 'D08', difficulty: 2, rng_dependent: false }, { name: 'D09', difficulty: 2, rng_dependent: false }, { name: 'D10', difficulty: 3, rng_dependent: false }, { name: 'D11', difficulty: 2, rng_dependent: false }, { name: 'D12', difficulty: 1, rng_dependent: false }, { name: 'D13', difficulty: 1, rng_dependent: false }, { name: 'D14', difficulty: 1, rng_dependent: false }, { name: 'D15', difficulty: 1, rng_dependent: false }, { name: 'D16', difficulty: 1, rng_dependent: false }, { name: 'D17', difficulty: 1, rng_dependent: false }, { name: 'D18', difficulty: 2, rng_dependent: false }, { name: 'D19', difficulty: 1, rng_dependent: false }, { name: 'D20', difficulty: 0, rng_dependent: false },
             { name: 'E01', difficulty: 1, rng_dependent: false }, { name: 'E02', difficulty: 0, rng_dependent: false }, { name: 'E05', difficulty: 0, rng_dependent: false }, { name: 'E06', difficulty: 0, rng_dependent: false }, { name: 'E07', difficulty: 3, rng_dependent: false }, { name: 'E08', difficulty: 1, rng_dependent: false }, { name: 'E09', difficulty: 1, rng_dependent: false }, { name: 'E10', difficulty: 5, rng_dependent: false }, { name: 'E11', difficulty: 1, rng_dependent: false }, { name: 'E12', difficulty: 1, rng_dependent: false }, { name: 'E13', difficulty: 0, rng_dependent: false }, { name: 'E14', difficulty: 1, rng_dependent: false }, { name: 'E15', difficulty: 1, rng_dependent: false }, { name: 'E16', difficulty: 0, rng_dependent: false }, { name: 'E17', difficulty: 5, rng_dependent: false }, { name: 'E18', difficulty: 4, rng_dependent: false }, { name: 'E19', difficulty: 0, rng_dependent: false }
         ];
 
@@ -126,7 +173,26 @@
 
         const splitter = document.getElementById('splitter');
 
-        Object.values(chapters).forEach((items, rowIndex) => {
+        Object.entries(chapters).forEach(([chapter, items], rowIndex) => {
+            const chapterCell = document.createElement('div');
+            const chapterName = document.createElement('div');
+            const chapterTime = document.createElement('div');
+
+            chapterCell.className = 'cell chapter-cell';
+            chapterCell.id = `chapter-cell-${chapter}`;
+            chapterCell.style.gridColumn = 1;
+            chapterCell.style.gridRow = rowIndex + 1;
+
+            chapterName.className = 'chapter-name';
+            chapterName.textContent = chapter;
+
+            chapterTime.className = 'chapter-time';
+            chapterTime.id = `chapter-time-${chapter}`;
+
+            chapterCell.appendChild(chapterName);
+            chapterCell.appendChild(chapterTime);
+            splitter.appendChild(chapterCell);
+
             items.forEach((item, columnIndex) => {
                 const cell = document.createElement('div');
                 const name = document.createElement('div');
@@ -135,15 +201,15 @@
                 const intensity = 255 - (item.difficulty * 42.5);
 
                 cell.className = 'cell';
+                if (item.rng_dependent) {
+                    cell.classList.add('rng-dependent');
+                }
                 cell.id = `cell-${item.globalIndex}`;
                 cell.style.backgroundColor = `rgb(255, ${intensity}, ${intensity})`;
-                cell.style.gridColumn = columnIndex + 1;
+                cell.style.gridColumn = columnIndex + 2;
                 cell.style.gridRow = rowIndex + 1;
 
                 name.className = 'name';
-                if (item.rng_dependent) {
-                    name.classList.add('rng-dependent');
-                }
                 name.textContent = item.name;
 
                 time.className = 'time';
@@ -200,6 +266,7 @@
 
             timeElement.textContent = formatTime(displayTime);
             cell.classList.add('has-time');
+            updateChapterTotals();
         }
 
         function updateAllDisplays() {
@@ -221,6 +288,37 @@
                 } else {
                     timeElement.textContent = '';
                     cell.classList.remove('has-time');
+                }
+            });
+        }
+
+        function updateChapterTotals() {
+            Object.entries(chapters).forEach(([chapter, items]) => {
+                const timeElement = document.getElementById(`chapter-time-${chapter}`);
+
+                if (!timeElement) {
+                    return;
+                }
+
+                let totalSeconds = items.reduce((total, item) => {
+                    return total + (splits[item.globalIndex] || 0);
+                }, 0);
+
+                if (!currentSplitPaused && currentSplit >= 0 && currentSplit < splits.length) {
+                    const currentItem = data[currentSplit];
+                    if (currentItem && currentItem.name.charAt(0).toUpperCase() === chapter) {
+                        totalSeconds += (Date.now() - currentSplitUpdatedAt) / 1000;
+                    }
+                }
+
+                const chapterCell = document.getElementById(`chapter-cell-${chapter}`);
+
+                if (totalSeconds > 0) {
+                    timeElement.textContent = formatTime(totalSeconds);
+                    chapterCell?.classList.add('has-time');
+                } else {
+                    timeElement.textContent = '';
+                    chapterCell?.classList.remove('has-time');
                 }
             });
         }
@@ -263,12 +361,15 @@
             }
 
             updateAllDisplays();
+            updateChapterTotals();
             updateActiveCell();
         };
 
         setInterval(() => {
             if (currentSplit >= 0 && !currentSplitPaused) {
                 updateCurrentSplitDisplay();
+            } else {
+                updateChapterTotals();
             }
         }, 1000);
 
